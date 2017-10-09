@@ -1,0 +1,86 @@
+Profil de puissance record : analyser vos performances!
+
+***NB : dans cette article je vais vous présenter le profil de puissance record. Ayez en tête que différentes définitions de cet outil existe. Certains considèrent que le profil de puissance record est le profil de puissance englobe toutes les performances d'un athlète enregistrées . D'autre comme moi considérons qu'iil peut être calculée sur une période donnée et restreinte***
+
+En parcourant les statistiques du blog, j'ai remarqué que les articles les plus populaires sont sans aucune contestation les articles liés à l'entrainement et plus particulièrement la programmation de l'entrainement.
+
+Notamment :
+
+- [des exemples de séances sur home-trainer](http://velo-trainer.fr/entrainement-home-trainer-des-exemples-de-seances-dune-heure-pour-augmenter-votre-pma/)
+- [analyses ost-entrainement](http://velo-trainer.fr/analyse-post-entrainement/)
+- [Estimer sa PMA sur le terrain](http://velo-trainer.fr/estimer-sa-pma-sur-le-terrain/)
+
+En regardant tous ces sujets de près, je vois que j'ai complètement oublié de de vous présenter le profil de puissance record.
+
+# C'est quoi le profil de puissance record 
+
+Le profil de puissance record (PPR ou RPP ou MMP en anglais) est un outil de modélisation de la performance qui existe depuis une quinzaine d'année et qui c'est démocratisé depuis seulement 5 ans avec l'augmentation des utilisateurs de capteurs de puissance.
+
+Il est difficile d'attribuer la paternité exacte de cette représentation mais on peut dire qu'elle présente dans la suite logiciel de TrainingsPeaks (Notament WKO+) depuis très longtemps.
+
+Cette représentation n'est ni plus ni moins une courbe qui est construite en connectant des points particuliers caractérisant vos performance anaérobie et aérobie.
+
+Cest points sont des couples temps t, puissance P qui représente la temps de soutient de P pendant une durée t.
+
+WKO+ a défini des instants t caractéristiques[^1] représentant des puissances elle aussi caractéristiques de la performance de l'athlète.
+
+Ces points sont : 1s, 5s, 30s, 1min, 3min, 3.5min, 4min, 4.5min, 5min, 5.5min, 6min, 6.5min, 7min, 10 min, 20min, 30min, 45min, 1h, 2h, 3h, 4h
+
+On fini la représentation en plaçant les points dans repère avec une échelle logarithmique en x et une échelle linéaire en y puis, on lie les points entre eux.
+Dans le  cas d'un outils de comme un tableur ([Calc de libreoffice](http://fr.libreoffice.org/) - [Excel c'est mal](https://framablog.org/2013/10/05/stallman-logiciel-libre/))
+
+[^1] Enfin cette définition d'instant caractéristique a été choisi de façon arbitraire et peut être remise en question voir doit être remise en question.
+
+
+Bon très bien mais si je suis ni informaticien ni un spéciliste des tableurs?
+
+# Comment je trace cette courbe?
+
+Pour tracer votre profil de puissance record à partir des donnéerŝ de votre capteur, il existe des solutions et pour beaucoup d'entre elles, gratuites!
+
+Alors on a :
+
+- WKO+ de trainingpeaks. Agh devil!!! Je ne vous donne pas de liens car il est payant et 
+- [Golden Cheetah](https://framablog.org/2013/10/05/stallman-logiciel-libre/) - gratuit et open source
+- [Srava](strava.com)
+- [Notre version en python](https://github.com/glemaitre/scikit-cycling) - pour les geeks ou les analystes du domaine
+
+# Ça sert à quoi ce profil de puissance
+
+Bon c'est bien, on a de quoi affichée cette représentation qu'est le profil de puissance record mais je ne vous ai pas encore indiqué à quoi elle nous servir…
+
+
+Pour moi, il y a deux utilisation principale du PPR :
+
+- l'évaluation de la progression
+- la calibration des séances d'entrainement
+
+Nous détaillons ces 2 applications ci-dessous :
+
+## Juger la progression
+
+Pour juger de la progression (ou de la regression! Ça arrive aussi), c'est très simple il sufffit de prendre 2 courbes de PPR construite avec 2 jeux de données provenant de 2 périodes différentes et de les représenté sur la même courbe.
+Tous les parties où la courbe correspondant aux données récemment acquises est au-dessus de l'autre courbe correspondent à une progression d'autant de watt qu'il séparent les deux courbes.
+
+De cette manière, on peut comparer les données de 2 saisons différentes, de 2 parties d'une saison.
+Toutes les combinaisons sont possibles (voir les images provenant de strava)
+
+
+## Calibrer une séance
+
+L'autre application principale consiste à utiliser cette courbe pour calibrer des séances d'interval training!
+Par exemple, à quelle puissance faire une séance de développement de la PMA? Souvent on refait un test de PMA voir on utilise des donnéess d'un test existant.
+Cependant le premier est traumatisant et avec le second vous utilisez des information potentiellement obsolète. 
+En effet, on a vite fait de passer un palier de PMA (ça peut arriver en 2 semaines…)
+
+Pour palier ça se prblème est d'aller regarder dans le PPR au temps de maintien voulue. Par exemple si on travail à 90% de la PMA on va aller chercher la valeur pour un temps de maitien de 20 min[^2].
+
+[^2] C'est dans ce cas que les qualités de l'entraineur apparaissent car c'est lui qui est capable de choisir la bonne durée par exemple à 90% suivant les athlète c'est potentiellement une valeur entre 16 et 22 min. C'est donc l'expérience de l'antraineur et sa connaissance de l'athlète qui rentre en jeu.
+
+# Est ce qu'il y a des limites?
+
+A mon sens le problème du PPR est qu'il n'utilise pas toutes les valeurs de puissance pour être construit.
+On peut ne pas voir des données ou caractéristiques du coureur en dehors 21 valeurs que nous avons donné un peu plus haut dans cette article.
+
+
+Alors prêt à l'utiliser le profil de puissance record.
